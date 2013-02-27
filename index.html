@@ -67,8 +67,8 @@
     $result = DB::conn()-&gt;query("SELECT * FROM foo WHERE type = ?", $type);
     $result = DB::conn()-&gt;query("SELECT * FROM foo WHERE type = ? AND cat IN ?", $type, array(1, 7));
 
-    $items = DB::conn()-&gt;fetchAll("SELECT id, name, description FROM foo WHERE type = ?", MYSQLI_FETCH_ASSOC, $type);
-    $item  = DB::conn()-&gt;fetchOne("SELECT * FROM foo WHERE id = ?", MYSQLI_FETCH_ASSOC, $id);
+    $items = DB::conn()-&gt;fetchAll("SELECT id, name, description FROM foo WHERE type = ?", MYSQLI_ASSOC, $type);
+    $item  = DB::conn()-&gt;fetchOne("SELECT * FROM foo WHERE id = ?", MYSQLI_ASSOC, $id);
     $names = DB::conn()-&gt;fetchColumn("SELECT name FROM foo WHERE type = ?", $type);
     $list  = DB::conn()-&gt;fetchPairs("SELECT id, name FROM foo WHERE type = ?", $type);
     $name  = DB::conn()-&gt;fetchValue("SELECT name FROM foo WHERE id = ?", $id);
@@ -136,14 +136,14 @@
     <script type="text/javascript">SHRSB_Settings['shr-publisher-876'].link = "http://jasny.github.com/DB-MySQL/";SHRSB_Settings['shr-publisher-876'].title = "DB-MySQL by Jasny";</script>      
 
 
-                  <script type="text/javascript">
+          <script type="text/javascript">
             var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
             document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
           </script>
           <script type="text/javascript">
             try {
               var pageTracker = _gat._getTracker("UA-32388850-3");
-            pageTracker._trackPageview();
+              pageTracker._trackPageview();
             } catch(err) {}
           </script>
   </body>
